@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Actions List</mat-card-title>
+        <mat-card-subtitle>Copy the item and paste in the box</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="client-area">
+        <ng-container *ngFor="let eachText of clientList$">
+            <div class="each-client-text">
+                <mat-form-field class="client-text">
+                    <mat-label>Prompt</mat-label>
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10"
+                        value="{{ eachText }}" readonly="true" #clientInput></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="client-copy" (click)="copyInputMessage(clientInput)">
+                    copy
+                </button>
+            </div>
+        </ng-container>
+    </mat-card-content>
+</mat-card>

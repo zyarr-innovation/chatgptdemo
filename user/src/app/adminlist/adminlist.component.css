@@ -1,0 +1,21 @@
+.admin-area {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.each-admin-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-text {
+    width: 90%;
+}
+
+.admin-copy {
+    align-items: end;
+    align-items: stretch;
+    margin-top: auto;
+    margin-bottom: auto;
+}

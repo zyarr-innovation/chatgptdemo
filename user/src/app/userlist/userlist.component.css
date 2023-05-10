@@ -1,0 +1,21 @@
+.client-area {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.each-client-text {
+    display: flex;
+    flex-direction: row;
+}
+
+.client-text {
+    width: 90%;
+}
+
+.client-copy {
+    align-items: end;
+    align-items: stretch;
+    margin-top: auto;
+    margin-bottom: auto;
+}

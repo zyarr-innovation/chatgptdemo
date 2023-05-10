@@ -1,0 +1,20 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Actions List</mat-card-title>
+        <mat-card-subtitle>Copy the item and paste in the box</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content class="admin-area">
+        <ng-container *ngFor="let eachText of adminList$">
+            <div class="each-admin-text">
+                <mat-form-field class="admin-text">
+                    <mat-label>Prompt</mat-label>
+                    <textarea matInput cdkTextareaAutosize cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10"
+                        value="{{ eachText }}" readonly="true" #adminInput></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="primary" class="admin-copy" (click)="sendInputMessage(adminInput)">
+                    copy
+                </button>
+            </div>
+        </ng-container>
+    </mat-card-content>
+</mat-card>
