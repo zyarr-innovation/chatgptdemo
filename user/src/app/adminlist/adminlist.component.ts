@@ -18,6 +18,6 @@ export class AdminListComponent {
   }
 
   sendInputMessage(inputElement: HTMLTextAreaElement) {
-    this.appDataService.send(inputElement.value);;
+    this.appDataService.send(inputElement.value).subscribe(data => console.log("data send..."));
   }
 }

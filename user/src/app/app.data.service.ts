@@ -29,6 +29,7 @@ export class AppDataService implements OnInit {
   }
 
   send(adminMessage: string) {
-    this.clientList.push(JSON.stringify({ "message": adminMessage }));
+    console.log('sending message: ', adminMessage)
+    return this.http.post("http://localhost:3000/message", JSON.stringify({ "message": adminMessage }));
   }
 }

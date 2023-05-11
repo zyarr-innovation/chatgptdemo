@@ -2,13 +2,14 @@ import express from "express";
 import bodyParser from 'body-parser';
 import http from "http";
 import { Server } from "socket.io";
+import path from 'path';
 
 const app = express();
 const server = http.createServer(app);
 const io: Server = require("socket.io")(server);
 
 app.use(bodyParser.json());
-app.use('/', express.static('../user/dist/user'));
+app.use(express.static('../user/dist/user'));
 
 let clientList: string[] = [
     "First String"
@@ -50,6 +51,22 @@ io.on("connection", (socket) => {
         console.log(`Client disconnected with id ${socket.id}`);
     });
 });
+
+
+// Route all API requests to index.html
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../user/dist/user/index.html'));
+});
+
+app.get('/user', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../user/dist/user/index.html'));
+});
+
+// Serve the Angular static files
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../user/dist/user/index.html'));
+});
+
 
 const port = 3000;
 
