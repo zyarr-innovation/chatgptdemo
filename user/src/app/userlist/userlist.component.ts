@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppDataService } from '../app.data.service';
 import { Clipboard } from '@angular/cdk/clipboard';
+import { io } from 'socket.io-client';
 
 @Component({
   selector: 'app-userlist',
@@ -17,6 +18,10 @@ export class UserListComponent {
 
   ngOnInit(): void {
     this.appDataService.getClientList().subscribe(data => this.clientList$ = data);
+    const socket = io("http://localhost:3000/");
+    socket.on('message', (data) => {
+      this.clientList$.push(data)
+    })
   }
 
   copyInputMessage(inputElement: HTMLTextAreaElement) {

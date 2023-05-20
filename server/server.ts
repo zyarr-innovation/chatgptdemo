@@ -12,19 +12,21 @@ app.use(bodyParser.json());
 app.use(express.static('../user/dist/user'));
 
 let clientList: string[] = [
-    "First String"
+    "https://chat.openai.com\nhttps://wokwi.com"
 ];
 let adminList: string[] = [
-    "First String",
-    "Second String",
-    "Third String",
-    "Fourth String",
-    "Fifth String",
-    "Sixth String",
-    "Seventh String",
-    "Eigth String",
-    "Ninth String",
-    "Tenth String"
+    "Suggest some interesting activities at the end of our High School Sports event",
+    "Draft a leave and license contract with fifty thousand deposit and twelve thousand monthly rent",
+    "Write a small peom for programmer falling in love with keyboard",
+    "Esp32 board, LED is connected on pin 12, write a micropython code for LED blinking",
+    "Esp32 board, DHT22 sensor connected on pin 15. Write a microphython for sensing temparature and humidity",
+    "Esp32 board, LED connected on pin 12, DHT22 connected on pin 15. Write a micropython code with WIFI connected with ssid Wokwi-GUEST. Add MQTT support with LED subscribing on topic device/led and DHT22 temp publishing on device/temp.",
+    "Reorganize the above code and make it more beautiful",
+    "Add debugging statement in the code",
+    "Refactor it into class",
+    "Document the class",
+    "Comment the class",
+    "Write unit test to test this class"
 ];
 
 app.get("/clientlist", (req, res) => {
