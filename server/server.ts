@@ -15,18 +15,32 @@ let clientList: string[] = [
     "https://chat.openai.com\nhttps://wokwi.com"
 ];
 let adminList: string[] = [
-    "Suggest some interesting activities at the end of our High School Sports event",
-    "Draft a leave and license contract with fifty thousand deposit and twelve thousand monthly rent",
-    "Write a small peom for programmer falling in love with keyboard",
-    "Esp32 board, LED is connected on pin 12, write a micropython code for LED blinking",
-    "Esp32 board, DHT22 sensor connected on pin 15. Write a microphython for sensing temparature and humidity",
-    "Esp32 board, LED connected on pin 12, DHT22 connected on pin 15. Write a micropython code with WIFI connected with ssid Wokwi-GUEST. Add MQTT support with LED subscribing on topic device/led and DHT22 temp publishing on device/temp.",
-    "Reorganize the above code and make it more beautiful",
-    "Add debugging statement in the code",
-    "Refactor it into class",
-    "Document the class",
-    "Comment the class",
-    "Write unit test to test this class"
+    //PLANNING
+    "Please help me draft a syllabus for an introductory course on Environmental Science",
+    "Please provide a detailed lesson plan for teaching the concept of Climate Change",
+    "I want you to create a study schedule with dates for me. The exact date today is 29th September 2023. I have my exam week starting on 1st December 2023 and I have exams for Environment Studies. I have “4” hours available each weekday and “8” hours available for each day of the weekend. I come back from school at “4” PM on the weekdays and have no school on weekends. Keep in mind that I should be focusing more on Final Project since it is the topic I am struggling with. After creating the schedule, break the weeks down and plan the days for me",
+    //TOPIC
+    "Outline an essay on Climate Change",
+    "Write an engaging and informative essay about Climate Change",
+    "Discuss the pros and cons of Climate Change",
+    "Can you explain Green House Effect in simple terms in great details?",
+    "Reorganize my text into bullet points",
+    "What are some fun ways to introduce the above topic",
+    "Write a song that teaches students about Climate Change",
+    "Please suggest some class discussion topic on above",
+    "Please suggest some in-class activities on the above",
+    //RESOURCE
+    "Suggest some books, articles and videos related Climate Change ",
+    "I have a student with Visual Learning Style. Can you recommend specific resources or tools that cater to this learning style?",
+    "Generate ideas for  experiments for Climate Change that can be conducted in a classroom setting.",
+    "List some fun activities I can do with my students to explore the concept of Climate Change",
+    "Can you suggest some interactive games or activities that can help reinforce learning in Climate Change?",
+    "Can you generate a hypothetical scenario for Climate Change and provide details and potential implications for the topic?",
+    "I'm introducing the Climate change to my class. Can you provide additional insights, examples, and real-world applications to help students explore and grasp the concept more thoroughly?",
+    //EVALUATION
+    "Suggest some quiz questions on Climate Change students.",
+    "Could you generate a set of questions that cover subtopics, ideas, and concepts related to this Climage Change? ",
+    "Can you provide some practice questions or mock exam questions and answers for Climage Change?"
 ];
 
 app.get("/clientlist", (req, res) => {

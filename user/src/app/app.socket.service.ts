@@ -9,7 +9,9 @@ export class SocketService {
     private socket: Socket;
 
     constructor() {
-        this.socket = io('http://localhost:3000');
+        const hostname = window.location.hostname;
+        const portNumber = window.location.port;
+        this.socket = io('http://' + hostname + ":" + portNumber);
     }
 
     public disconnect(): void {

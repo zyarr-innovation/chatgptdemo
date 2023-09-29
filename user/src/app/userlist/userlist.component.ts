@@ -9,16 +9,21 @@ import { io } from 'socket.io-client';
   styleUrls: ['./userlist.component.css']
 })
 export class UserListComponent {
+  serverURL: string = ""
   clientList$: string[] = []
 
   constructor(
     private clipboard: Clipboard,
     private appDataService: AppDataService) {
+
+    let hostname = window.location.hostname;
+    let portNumber = window.location.port;
+    this.serverURL = 'http://' + hostname + ":" + portNumber;
   }
 
   ngOnInit(): void {
     this.appDataService.getClientList().subscribe(data => this.clientList$ = data);
-    const socket = io("http://localhost:3000/");
+    const socket = io(this.serverURL);
     socket.on('message', (data) => {
       this.clientList$.push(data)
     })

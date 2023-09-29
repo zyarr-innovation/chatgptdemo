@@ -7,24 +7,30 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppDataService implements OnInit {
 
+  serverURL: string = ""
+
   clientList: string[] = [];
   adminList: string[] = [];
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    let hostname = window.location.hostname;
+    let portNumber = window.location.port;
+    this.serverURL = "http://" + hostname + ":" + portNumber
+  }
 
   ngOnInit(): void {
 
   }
 
   getClientList(): Observable<string[]> {
-    return this.http.get<string[]>("http://localhost:3000/clientlist");
+    return this.http.get<string[]>(this.serverURL + "/clientlist");
   }
 
   getAdminList(): Observable<string[]> {
-    return this.http.get<string[]>("http://localhost:3000/adminlist");
+    return this.http.get<string[]>(this.serverURL + "/adminlist");
   }
 
   send(adminMessage: string) {
     console.log('sending message: ', adminMessage)
-    return this.http.post("http://localhost:3000/message", { "message": adminMessage });
+    return this.http.post(this.serverURL + "/message", { "message": adminMessage });
   }
 }
